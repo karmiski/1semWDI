@@ -1,6 +1,7 @@
 #Napisać program wyszukujący liczby zaprzyjaźnione mniejsze od miliona. 
 N =  1000000
 num = list(range(0,N))
+# wyszukiwanie dzielnikow
 for i in range(2,N):
     a = i
     x = 2
@@ -11,6 +12,7 @@ for i in range(2,N):
         x+=1
     if(x*x == a): 
         num[i] += x
+#wyszukiwanie zaprzyjaznionych liczb
 for i in range(2,N):
     if(num[i] < N):
         if(num[num[i]] < N):
