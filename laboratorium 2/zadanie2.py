@@ -8,17 +8,17 @@ try:
     sieve = [0 for i in range(a)] #from 0 to a - 1
     prime = []
     sieve[1] = 1 
-    #finding primes smaller than a
+    #znajdowanie liczb pierwszych mniejszych od a
     for i in range(2,a):
         x = i
-        if sieve[x] == 0:
+        if sieve[x] == 0:#jeśli liczba nie jest pierwsza to jej wielokrotności zostały wcześniej obsłużone
             prime.append(x)
-            while x < a:  #if number not prime then its multiplications were already found 
+            while x < a:  #jeśli liczba jest pierwsza to jej wielokrotności nie są
                 sieve[x] = 1
                 x += i
-
+    #wypisanie oczekiwanego wyniku
     for i in range(len(prime)-1,0, -1):
         temp = prime[i]%prime[i-1]
         print(prime[i],'/',prime[i-1],'=',int((prime[i]-temp)/prime[i-1]),'r =', temp)
 except:
-    print('you should input a natural number')
+    print('Wprowadź liczbę naturalną')
