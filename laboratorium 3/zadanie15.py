@@ -4,7 +4,7 @@ try:
         int('a')
     b = int(input("Czym chcesz wypełniać?"))
 except:
-    print("Obie liczby powinny być naturalne, a > 1")
+    print("Obie liczby powinny być całkowite, a > 1")
     exit()
 
 matrix = [[0 for i in range(2*a-1)] for j in range(2*a-1)]
