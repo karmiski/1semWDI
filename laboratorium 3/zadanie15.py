@@ -23,7 +23,7 @@ def ramka(parity1,parity2):
     printm(matrix)
 
 def przek(l,r):
-for i in range(2*a-1):
+    for i in range(2*a-1):
         if(l == 1):
             matrix[i][i] = b
         if(r == 1):
