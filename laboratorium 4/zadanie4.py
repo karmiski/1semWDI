@@ -32,12 +32,11 @@ try:
 except:
     print("Brak ustawionego hasła")
     exit()
-'''userpass = hashlib.sha256(input("Podaj hasło:").encode()).hexdigest()
+userpass = hashlib.sha256(input("Podaj hasło:").encode()).hexdigest()
 if userpass != password:
     print("Niestety nie")
     exit()
-else:'''
-if(0==0):
+else:
     print("Witaj")
     path = os.getcwd()
     trash = path + "/trash"
@@ -46,13 +45,8 @@ if(0==0):
         print("Jesteś tutaj:\n",path,"\nCo chcesz zrobić?\n1:<\n2:>\n3:usuń\n4:kopiuj\n5:wklej\n6:zmień nazwę\n")
         try:
             a = int(input())
-        except:
-            exit()        if(a == 1): #<
-            try:
+            if(a == 1): #<
                 path = os.path.dirname(path)
-            except:
-                print("Co ty robisz?")
-        try:
             elif(a == 2): #>
                 item = select(1) 
                 path = path + "/" + item
@@ -72,4 +66,5 @@ if(0==0):
                 exit()
         except:
             print("Coś jest nie tak xd")
+            
 
