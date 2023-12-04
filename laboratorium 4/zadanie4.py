@@ -19,7 +19,7 @@ def select(arg):  #1 - directories, 0 - others
             print(a,": ",item)
             a+=1
         if(len(lista) == 0):
-            print("Tu nic nie ma")  #excepta wyrzuca potem, dodaj try
+            print("Tu nic nie ma")  
         else:
             try:
                 return(lista[int(input())])
@@ -47,27 +47,29 @@ if(0==0):
         try:
             a = int(input())
         except:
-            exit()
-        if(a == 1): #<
+            exit()        if(a == 1): #<
             try:
                 path = os.path.dirname(path)
             except:
                 print("Co ty robisz?")
-        elif(a == 2): #>
-            item = select(1) 
-            path = path + "/" + item
-        elif(a == 3): #usuń
-            item = select(0)
-            shutil.move(path + "/" + item, trash+"/"+item)
-        elif(a == 4): #kopiuj
-            clipboard = select(0)
-            clippath = path + "/" + clipboard
-        elif(a == 5): #wklej
-            shutil.move(clippath,path+"/"+clipboard)
-        elif(a == 6): #zmień nazwę
-            item = select(0)
-            newname = input("Podaj nową nazwę:")
-            os.rename(path + "/" + item, newname)
-        else:
-            exit()
+        try:
+            elif(a == 2): #>
+                item = select(1) 
+                path = path + "/" + item
+            elif(a == 3): #usuń
+                item = select(0)
+                shutil.move(path + "/" + item, trash+"/"+item)
+            elif(a == 4): #kopiuj
+                clipboard = select(0)
+                clippath = path + "/" + clipboard
+            elif(a == 5): #wklej
+                shutil.move(clippath,path+"/"+clipboard)
+            elif(a == 6): #zmień nazwę
+                item = select(0)
+                newname = input("Podaj nową nazwę:")
+                os.rename(path + "/" + item, newname)
+            else:
+                exit()
+        except:
+            print("Coś jest nie tak xd")
 
